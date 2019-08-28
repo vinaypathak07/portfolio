@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
+import { SaveUserService } from './shared/save-user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { EmailValidationService } from './shared/email-validation.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,12 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule
+    // AngularFireModule,
+    // AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [SaveUserService, EmailValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

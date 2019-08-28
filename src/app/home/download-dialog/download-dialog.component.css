@@ -1,0 +1,15 @@
+.mat-dialog-title{
+    margin-left:10%;
+}
+.mat-form-field{
+    width:80%;
+    font-size:14px;
+}
+.mat-dialog-content{
+    margin-top:5%;
+    height:85%;
+}
+p{
+    display: flex;
+    justify-content:  center;
+}

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
-
+.mat-toolbar{
+  background-color: #3f51b5;
+}
 /* .example-container {
     display: flex;
     flex-direction: column;
@@ -25,4 +27,5 @@
   .example-app-name {
     font-family: Inconsolata, monospace;
     font-weight: bold;
+    color:white;
   }

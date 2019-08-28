@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Hi {{name }}</h1>
+    <div mat-dialog-content>
+        <form class="download-form" [formGroup]="downloadForm" (ngSubmit)="onSubmit()">
+            <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your name</mat-label>
+                  <input matInput formControlName="userName" [(ngModel)]="name" placeholder="Enter your name">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput formControlName="userEmail" placeholder="Enter your email">
+                </mat-form-field>
+            </p>
+            <mat-dialog-actions align ="end">
+              <button mat-button  (click)="onCancel()">Cancel</button>
+              <button mat-button type="submit" cdkFocusInitial [disabled]="!downloadForm.valid">Download</button>
+            </mat-dialog-actions> 
+        </form>
+    </div>

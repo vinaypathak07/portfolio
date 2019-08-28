@@ -1,6 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import {
     MatToolbarModule,
     MatButtonModule,
@@ -8,6 +9,10 @@ import {
     MatMenuModule,
     MatSidenavModule,
     MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule
 } from '@angular/material';
 
 @NgModule({
@@ -18,7 +23,11 @@ import {
         MatCardModule,
         MatMenuModule,
         MatSidenavModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSnackBarModule
     ],
     exports: [
         CommonModule,
@@ -27,7 +36,10 @@ import {
         MatCardModule,
         MatMenuModule,
         MatSidenavModule,
-        MatIconModule
+        MatIconModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        MatInputModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
