@@ -9,10 +9,13 @@ import { HomeModule } from './home/home.module';
 import { SaveUserService } from './shared/save-user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailValidationService } from './shared/email-validation.service';
+import { SkillsComponent } from './skills/skills.component';
+import { DownloadPdfService } from './shared/download-pdf.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { EmailValidationService } from './shared/email-validation.service';
     // AngularFireModule,
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [SaveUserService, EmailValidationService],
+  providers: [SaveUserService, EmailValidationService, DownloadPdfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

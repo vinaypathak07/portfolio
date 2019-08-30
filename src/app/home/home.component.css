@@ -37,7 +37,16 @@ p{
     font-family: Inconsolata, monospace;
     font-weight:bold;
     color:white;
-    background-color: #3f51b5;
+}
+img {
+    width:40px;
+    height:40px;
+    background: transparent;
+    padding : 10px;
+}
+.handles {
+    display:flex;
+    justify-content:space-evenly;
 }
 @media only screen and (max-width: 600px) {
     .card {

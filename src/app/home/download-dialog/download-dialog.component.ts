@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SaveUserService } from 'src/app/shared/save-user.service';
 import { DialogData, User } from 'src/app/models/users';
 import { EmailValidationService } from 'src/app/shared/email-validation.service';
+import { DownloadPdfService } from 'src/app/shared/download-pdf.service';
+import * as FileSaver from "file-saver";
 
 
 @Component({
@@ -17,10 +19,12 @@ export class DownloadDialogComponent implements OnInit {
   emailExists = false;
   user: User[] =  [];
   downloadForm: FormGroup;
+  // pdfUrl = 'http://drive.google.com/uc?export=download&id=1r372wVBVpyj0eT-GpaeJM6ht-wwQvEM4';
+  pdfUrl ='assets/Vinay_Pathak_Resume.pdf';
   constructor(public dialogRef: MatDialogRef<DownloadDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData, private save: SaveUserService,
               private emailValidation: EmailValidationService,
-              private _snackBar: MatSnackBar) { }
+              private _snackBar: MatSnackBar,private downloadService: DownloadPdfService) { }
 
   ngOnInit() {
     this.downloadForm = new FormGroup({
@@ -48,6 +52,8 @@ export class DownloadDialogComponent implements OnInit {
               this.emailExists = response.smtp_check;
               if (!this.emailExists) {
                 this.openSnackBar({message: 'Email not valid!', action: 'OK', duration: 3000});
+              } else {
+                this.downloadFile();
               }
             },
             (error) => console.log(error)
@@ -60,5 +66,12 @@ export class DownloadDialogComponent implements OnInit {
       duration: event.duration,
     });
   }
-}
 
+  public downloadFile() {
+    this.downloadService.downloadPdf(this.pdfUrl).subscribe(
+        (res) => {
+            FileSaver.saveAs(res, 'Vinay_Pathak_Resume.pdf');
+        }
+    );
+  }
+}
