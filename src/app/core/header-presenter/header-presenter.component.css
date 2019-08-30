@@ -1,7 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
-.mat-toolbar{
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+.mat-toolbar {
   background-color: #3f51b5;
 }
+.example-app-name {
+  font-family: Inconsolata, monospace;
+  font-weight: bold;
+  color: white;
+}
+.links {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+.links div {
+  padding: 10px;
+}
+a {
+  font-family: Inconsolata, Monospace;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 /* .example-container {
     display: flex;
     flex-direction: column;
@@ -24,8 +46,3 @@
   .example-is-mobile .example-sidenav-container {
     flex: 1 0 auto;
   } */
-  .example-app-name {
-    font-family: Inconsolata, monospace;
-    font-weight: bold;
-    color:white;
-  }
