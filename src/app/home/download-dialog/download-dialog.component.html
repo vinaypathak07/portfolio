@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Hi {{name }}</h1>
+  <h1 mat-dialog-title>Hi &nbsp; {{name }}</h1>
     <div mat-dialog-content>
         <form class="download-form" [formGroup]="downloadForm" (ngSubmit)="onSubmit()">
             <p>
@@ -13,9 +13,10 @@
                   <input matInput formControlName="userEmail" placeholder="Enter your email">
                 </mat-form-field>
             </p>
-            <mat-dialog-actions align ="end">
-              <button mat-button  (click)="onCancel()">Cancel</button>
+            <mat-dialog-actions align="end">
+              <button mat-button type="button" (click)="onCancel()">Cancel</button>
               <button mat-button type="submit" cdkFocusInitial [disabled]="!downloadForm.valid">Download</button>
             </mat-dialog-actions> 
         </form>
     </div>
+

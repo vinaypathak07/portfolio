@@ -1,9 +1,19 @@
+.myClass .mat-dialog-container {
+        border: 1px solid black;
+}
 .mat-dialog-title{
     margin-left:10%;
+    font-size:24px;
+}
+.download-form{
+    margin-top:10%;
 }
 .mat-form-field{
     width:80%;
     font-size:14px;
+}
+.mat-dialog-actions{
+    margin-right:6%;
 }
 .mat-dialog-content{
     margin-top:5%;

@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
       width: '400px',
       height: '400px',
       autoFocus: true,
-      data: { myName : 'Vinay Pathak'}
+      data: { myName : 'Vinay Pathak'},
+      panelClass: 'myClass'
     });
 
     dialogRef.afterClosed().subscribe(

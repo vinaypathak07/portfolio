@@ -4,6 +4,7 @@ import { MaterialModule } from '../material/material.module';
 import { CommonModule } from '@angular/common';
 import { DownloadDialogComponent } from './download-dialog/download-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SendMailService } from '../shared/send-mail.service';
 
 @NgModule({
     declarations : [
@@ -19,7 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         HomeComponent
     ],
     entryComponents: [DownloadDialogComponent],
-    providers: [],
+    providers: [SendMailService],
     bootstrap: []
 })
 
