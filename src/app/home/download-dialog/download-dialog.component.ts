@@ -22,6 +22,7 @@ export class DownloadDialogComponent implements OnInit {
   downloadForm: FormGroup;
   // pdfUrl = 'http://drive.google.com/uc?export=download&id=1r372wVBVpyj0eT-GpaeJM6ht-wwQvEM4';
   pdfUrl = 'assets/Vinay_Pathak_Resume.pdf';
+  // pdfUrl = 'https://drive.google.com/open?id=1r372wVBVpyj0eT-GpaeJM6ht-wwQvEM4';
   constructor(public dialogRef: MatDialogRef<DownloadDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData, private save: SaveUserService,
               private emailValidation: EmailValidationService,

@@ -1,0 +1,14 @@
+.contact-card-container{
+    min-height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    height: 450px;
+    width: 60%;
+}
+
+.mat-card{
+    height:100%;
+}
