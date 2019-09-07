@@ -7,6 +7,8 @@ import { EmailValidationService } from 'src/app/shared/email-validation.service'
 import { DownloadPdfService } from 'src/app/shared/download-pdf.service';
 import * as FileSaver from 'file-saver';
 import { SendMailService } from 'src/app/shared/send-mail.service';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 
 @Component({
@@ -20,14 +22,11 @@ export class DownloadDialogComponent implements OnInit {
   emailExists = false;
   user: User[] = [];
   downloadForm: FormGroup;
-  // pdfUrl = 'http://drive.google.com/uc?export=download&id=1r372wVBVpyj0eT-GpaeJM6ht-wwQvEM4';
-  pdfUrl = 'assets/Vinay_Pathak_Resume.pdf';
-  // pdfUrl = 'https://drive.google.com/open?id=1r372wVBVpyj0eT-GpaeJM6ht-wwQvEM4';
+  pdfUrl: string;
   constructor(public dialogRef: MatDialogRef<DownloadDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData, private save: SaveUserService,
-              private emailValidation: EmailValidationService,
-              private _snackBar: MatSnackBar, private downloadService: DownloadPdfService,
-              private sendMailService: SendMailService) { }
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private save: SaveUserService,
+    private emailValidation: EmailValidationService,
+    private _snackBar: MatSnackBar, private sendMailService: SendMailService) { }
 
   ngOnInit() {
     this.downloadForm = new FormGroup({
@@ -56,8 +55,9 @@ export class DownloadDialogComponent implements OnInit {
           if (!this.emailExists) {
             this.openSnackBar({ message: 'Email not valid!', action: 'OK', duration: 3000 });
           } else {
-            this.downloadFile();
-            this.sendMail();
+            // this.downloadFile();
+            this.openPdf();
+            // this.sendMail();
           }
         },
         (error) => console.log(error)
@@ -70,20 +70,47 @@ export class DownloadDialogComponent implements OnInit {
       duration: event.duration,
     });
   }
+  // Downloading File
+  // downloadFile() {
+  //   this.downloadService.downloadPdf(this.pdfUrl).subscribe(
+  //     (res) => {
+  //       FileSaver.saveAs(res, 'Vinay_Pathak_Resume.pdf');
+  //     }
+  //   );
+  // }
 
-  downloadFile() {
-    this.downloadService.downloadPdf(this.pdfUrl).subscribe(
-      (res) => {
-        FileSaver.saveAs(res, 'Vinay_Pathak_Resume.pdf');
+  openPdf() {
+    const storageRef = firebase.storage().ref();
+    // this.ref = this.afStorage.ref('Vinay_Pathak_Resume.pdf');
+    const pdfRef = storageRef.child('Vinay_Pathak_Resume.pdf');
+    pdfRef.getDownloadURL().then(function (url) {
+      // Insert url into an <img> tag to "download"
+      const openedWindow = window.open(url);
+      // openedWindow.document.write("<h3> Thank you for downloading </h3>");
+    }).catch(function (error) {
+      // A full list of error codes is available at
+      // https://firebase.google.com/docs/storage/web/handle-errors
+      switch (error.code) {
+        case 'storage/object-not-found':
+          // File doesn't exist
+          break;
+        case 'storage/unauthorized':
+          // User doesn't have permission to access the object
+          break;
+        case 'storage/canceled':
+          // User canceled the upload
+          break;
+        case 'storage/unknown':
+          // Unknown error occurred, inspect the server response
+          break;
       }
-    );
+    });
   }
-
-  sendMail() {
-    this.sendMailService.send(this.downloadForm.value)
-      .subscribe(
-        (response) => console.log('mail sent'),
-        (error) => console.log(error)
-      );
-  }
+  // sendMail() {
+  //   this.sendMailService.send(this.downloadForm.value)
+  //     .subscribe(
+  //       (response) => console.log('mail sent'),
+  //       (error) => console.log(error)
+  //     );
+  // }
 }

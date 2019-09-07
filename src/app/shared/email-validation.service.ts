@@ -9,6 +9,6 @@ export class EmailValidationService {
   constructor(private http: HttpClient) { }
 
   verifyEmail(email: string) {
-    return this.http.get('http://apilayer.net/api/check?access_key=1fe561e36cb69518b86f787dbab0a22e&email=' + email + '&smtp=1&format=1');
+    return this.http.get('https://apilayer.net/api/check?access_key=1fe561e36cb69518b86f787dbab0a22e&email=' + email + '&smtp=1&format=1');
   }
 }

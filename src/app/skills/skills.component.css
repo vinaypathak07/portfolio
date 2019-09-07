@@ -1,0 +1,17 @@
+.card-container {
+    min-height:calc(100vh - 110px);
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    row-gap: 20px;
+    column-gap: 20px; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.card {
+    height: 100%;
+}
+
+.mat-card {
+    height: 90%;
+}

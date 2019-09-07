@@ -12,7 +12,8 @@ import {
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +28,8 @@ import {
         MatDialogModule,
         MatFormFieldModule,
         MatInputModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatListModule
     ],
     exports: [
         CommonModule,
@@ -39,7 +41,8 @@ import {
         MatIconModule,
         MatFormFieldModule,
         MatDialogModule,
-        MatInputModule
+        MatInputModule,
+        MatListModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

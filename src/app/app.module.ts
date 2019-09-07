@@ -10,7 +10,10 @@ import { SaveUserService } from './shared/save-user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailValidationService } from './shared/email-validation.service';
 import { DownloadPdfService } from './shared/download-pdf.service';
-
+import { environment } from '../environments/environment';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
+firebase.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,7 @@ import { DownloadPdfService } from './shared/download-pdf.service';
     HomeModule,
     HttpClientModule,
   ],
-  providers: [SaveUserService, EmailValidationService, DownloadPdfService],
+  providers: [SaveUserService, EmailValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

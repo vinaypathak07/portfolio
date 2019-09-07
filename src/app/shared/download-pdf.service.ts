@@ -12,8 +12,7 @@ export class DownloadPdfService {
 
   public downloadPdf(pdfUrl: string): any {
         let url = pdfUrl;
-        let headers = new HttpHeaders({'Content-Type': 'application/pdf', 'Access-Control-Allow-Origin': '*'});
-        // headers = headers.set();
+        let headers = new HttpHeaders({'Content-Type': 'application/pdf'});
         return this.http.get(url, { headers: headers, responseType: 'blob' }).pipe(map((data: any)  => {
           let blob = new Blob([data], {
              type: 'application/pdf' 
