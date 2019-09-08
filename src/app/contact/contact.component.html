@@ -1,14 +1,19 @@
 <div class="contact-card-container">
   <div class="card">
     <mat-card>
+      <mat-card-header>
+        <mat-card-title style="margin-bottom:0">
+           Contact
+        </mat-card-title>
+      </mat-card-header>
       <form
         class="contact-form"
         [formGroup]="contactForm"
         (ngSubmit)="contact()"
       >
         <div>
-          <mat-label class="label">Name</mat-label>
           <mat-form-field appearance="outline">
+            <mat-label class="label">Name</mat-label>
             <input
               matInput
               placeholder="Enter name"
@@ -18,8 +23,8 @@
           </mat-form-field>
         </div>
         <div>
-          <mat-label class="label">Email</mat-label>
           <mat-form-field appearance="outline">
+            <mat-label class="label">Email</mat-label>
             <input
               matInput
               placeholder="Enter email"
@@ -29,8 +34,8 @@
           </mat-form-field>
         </div>
         <div>
-          <mat-label class="label">Message</mat-label>
           <mat-form-field appearance="outline">
+            <mat-label class="label">Message</mat-label>
             <textarea
               matInput
               placeholder="Textarea"

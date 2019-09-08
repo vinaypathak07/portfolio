@@ -9,7 +9,6 @@ import { HomeModule } from './home/home.module';
 import { SaveUserService } from './shared/save-user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailValidationService } from './shared/email-validation.service';
-import { DownloadPdfService } from './shared/download-pdf.service';
 import { environment } from '../environments/environment';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';

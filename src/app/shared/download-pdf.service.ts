@@ -15,7 +15,7 @@ export class DownloadPdfService {
         let headers = new HttpHeaders({'Content-Type': 'application/pdf'});
         return this.http.get(url, { headers: headers, responseType: 'blob' }).pipe(map((data: any)  => {
           let blob = new Blob([data], {
-             type: 'application/pdf' 
+             type: 'application/pdf'
           });
           return blob;
         }));

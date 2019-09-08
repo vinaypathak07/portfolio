@@ -16,27 +16,46 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px;
+}
+.mat-card-header {
+  height:60px;
+  width : 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #3f51b5;
+  /* margin: 0px; */
+  /* background: #00c6ff; 
+  background: -webkit-linear-gradient(to right, #00c6ff, #0072ff); 
+  background: linear-gradient(to right, #00c6ff, #0072ff); */
+}
+.mat-card-title {
+  font-family: Inconsolata, Monospace;
+  font-weight: bold;
+  font-size:24px;
+  color: antiquewhite;
 }
 .contact-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
   width: 80%;
-  padding: 10px;
+  padding: 20px;
+  margin-top:20px;
 }
 .mat-form-field {
-  width: 70%;
+  width: 60%;
 }
-.mat-form-field-appearance-outline .mat-form-field-infix{
-    padding: 0.70em 0 1.3em 0;
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.7em 0 1.3em 0;
 }
 .contact-form div {
   display: flex;
   flex-direction: column;
-  /* padding: 5px; */
+  align-items: center;
   width: 100%;
 }
 .label {
@@ -54,30 +73,31 @@
   font-family: Inconsolata, monospace;
   font-weight: bold;
 }
-input,textarea{
+input,
+textarea {
+  font-family: Inconsolata, monospace;
+  font-weight: bold;
+
+  padding: 2px 0 8px 0;
+}
+@media only screen and (max-width: 556px) {
+  .contact-card-container {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    min-height: 450px;
+    min-width: 80%;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+  .mat-flat-button {
+    width: 50%;
+    color: white;
     font-family: Inconsolata, monospace;
     font-weight: bold;
-    
-    padding: 2px 0 8px 0;
+  }
 }
-@media only screen and (max-width:556px) {
-    .contact-card-container {
-        min-height: calc(100vh - 64px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .card {
-        min-height: 450px;
-        min-width: 80%;
-      }
-      .mat-form-field {
-        width: 100%;
-      }
-      .mat-flat-button {
-        width: 50%;
-        color: white;
-        font-family: Inconsolata, monospace;
-        font-weight: bold;
-      }
-}   
