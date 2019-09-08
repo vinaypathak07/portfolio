@@ -42,6 +42,9 @@
     font-size:20px;
     font-weight:bold;
 }
+.hr-line {
+    display: none ;
+}
 @media only screen and (max-width: 600px) {
     .card-container{
         min-height:calc(100vh - 90px);
@@ -49,7 +52,7 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-template-rows: 1fr auto;
         /* grid-column-gap: 10px; */
-        grid-row-gap:20px;
+        grid-row-gap:10px;
         padding:20px 40px 20px 40px;
     }
     .mat-card{
@@ -57,5 +60,9 @@
         flex-direction: column;
         height:200px;
         justify-content: space-evenly;
+    }
+    .hr-line {
+        display: block;
+        border-bottom: 1px solid lightgray;
     }
   }
