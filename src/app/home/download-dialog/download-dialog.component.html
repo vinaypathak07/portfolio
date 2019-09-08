@@ -3,13 +3,13 @@
         <form class="download-form" [formGroup]="downloadForm" (ngSubmit)="onSubmit()">
             <p>
                 <mat-form-field appearance="outline">
-                  <mat-label>Enter your name</mat-label>
+                  <mat-label class="label">Enter your name</mat-label>
                   <input matInput formControlName="userName" [(ngModel)]="name" placeholder="Enter your name">
                 </mat-form-field>
             </p>
             <p>
                 <mat-form-field appearance="outline">
-                  <mat-label>Enter your email</mat-label>
+                  <mat-label class="label">Enter your email</mat-label>
                   <input matInput formControlName="userEmail" placeholder="Enter your email">
                 </mat-form-field>
             </p>

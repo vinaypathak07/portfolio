@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 .myClass .mat-dialog-container {
         border: 1px solid black;
 }
@@ -22,4 +23,13 @@
 p{
     display: flex;
     justify-content:  center;
+}
+.label {
+    font-family: Inconsolata, Monospace;
+    font-weight:bold;
+    font-size:15px;
+}
+
+input {
+    padding : 0 0 4px 0;
 }

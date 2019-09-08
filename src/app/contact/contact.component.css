@@ -7,7 +7,7 @@
 }
 .card {
   min-height: 450px;
-  min-width: 60%;
+  min-width: 50%;
 }
 
 .mat-card {
@@ -24,7 +24,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #3f51b5;
+  /* background-color: #3f51b5; */
+  background-color: #2C3335;
   /* margin: 0px; */
   /* background: #00c6ff; 
   background: -webkit-linear-gradient(to right, #00c6ff, #0072ff); 
@@ -33,7 +34,7 @@
 .mat-card-title {
   font-family: Inconsolata, Monospace;
   font-weight: bold;
-  font-size:24px;
+  font-size:20px;
   color: antiquewhite;
 }
 .contact-form {
@@ -47,7 +48,8 @@
   margin-top:20px;
 }
 .mat-form-field {
-  width: 60%;
+  width: 47%;
+  font-size:12px;
 }
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 0.7em 0 1.3em 0;
@@ -62,13 +64,13 @@
   padding: 6px;
   font-family: Inconsolata, monospace;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
 }
 .mat-card-actions {
   width: 100%;
 }
 .mat-flat-button {
-  width: 20%;
+  min-width: 47%;
   color: white;
   font-family: Inconsolata, monospace;
   font-weight: bold;
@@ -80,7 +82,10 @@ textarea {
 
   padding: 2px 0 8px 0;
 }
-@media only screen and (max-width: 556px) {
+textarea {
+  height : 60px;
+}
+@media only screen and (max-width: 800px) {
   .contact-card-container {
     min-height: calc(100vh - 64px);
     display: flex;
@@ -92,10 +97,10 @@ textarea {
     min-width: 80%;
   }
   .mat-form-field {
-    width: 100%;
+    width: 75%;
   }
   .mat-flat-button {
-    width: 50%;
+    width: 75%;
     color: white;
     font-family: Inconsolata, monospace;
     font-weight: bold;
