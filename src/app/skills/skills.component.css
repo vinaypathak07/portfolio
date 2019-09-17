@@ -39,6 +39,12 @@
     align-items: center;
     justify-content: center;
 }
+.mat-card-content a{
+    font-family: Inconsolata, Monospace;
+    font-weight: bold;
+    background-color:#0A79DF;
+    color:white;
+}
 .mat-card-title {
     font-family: Inconsolata, Monospace;
     font-weight: bold;
@@ -91,7 +97,6 @@
         align-items: center;
         font-size: 24px;
         font-weight: bold;
-
     }
     .mat-card-title {
         font-family: Inconsolata, Monospace;
