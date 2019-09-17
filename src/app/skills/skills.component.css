@@ -25,19 +25,38 @@
     height: 70px;   
     flex-shrink: 0;
 }
+.java,.angular,.javascript,.data-structures,.dbms,.c {    
+    background-color: #EAF0F1;
+}
+
 .mat-card-content {
+    display: flex;
     flex-grow:1;
     margin: 0;
+    font-family: Inconsolata, Monospace;
+    font-weight: bold;
+    font-size: 44px;
+    align-items: center;
+    justify-content: center;
 }
 .mat-card-title {
     font-family: Inconsolata, Monospace;
     font-weight: bold;
     font-size: 24px;
+    /* color: white; */
 }
 .mat-card-footer {
     margin : 0;
     height : 70px;
     bottom: 0;
+    background-color: #EAF0F1;
+}
+.mat-card-footer .bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
 }
 @media only screen and (max-width: 600px) {
     .card-container {
@@ -52,5 +71,42 @@
     }
     .card {
         height: 200px;
+    }
+    .mat-card-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; 
+        height: 50px;   
+        flex-shrink: 0;
+    }
+    .mat-card-footer {
+        margin : 0;
+        height : 50px;
+        bottom: 0;
+        background-color: #EAF0F1;
+    }
+    .mat-card-footer .bar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+    .mat-card-title {
+        font-family: Inconsolata, Monospace;
+        font-weight: bold;
+        font-size: 18px;
+        /* color: white; */
+    }
+    .mat-card-content {
+        display: flex;
+        flex-grow:1;
+        margin: 0;
+        font-family: Inconsolata, Monospace;
+        font-weight: bold;
+        font-size: 34px;
+        align-items: center;
+        justify-content: center;
     }
   }
