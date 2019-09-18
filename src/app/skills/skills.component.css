@@ -45,11 +45,16 @@
     background-color:#0A79DF;
     color:white;
 }
+
 .mat-card-title {
     font-family: Inconsolata, Monospace;
     font-weight: bold;
     font-size: 24px;
     /* color: white; */
+}
+img {
+    width: 50px;
+    height: 50px;
 }
 .mat-card-footer {
     margin : 0;
@@ -113,5 +118,9 @@
         font-size: 34px;
         align-items: center;
         justify-content: center;
+    }
+    img {
+        width: 40px;
+        height: 40px;
     }
   }
