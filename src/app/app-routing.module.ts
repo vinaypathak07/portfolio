@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then(mod => mod.ContactModule)
+  },
+  {
+    path: 'journey-so-far',
+    loadChildren: () => import('./journey-so-far/journey-so-far.module').then(mod => mod.JourneySoFarModule)
   }
 ];
 

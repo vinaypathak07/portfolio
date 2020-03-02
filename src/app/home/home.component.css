@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
   min-height: 450px;
-  padding: 60px;
+  padding: 46px 60px 46px 60px;
   /* background-color: #74B9FF; */
 }
 .mat-card-content {
