@@ -1,11 +1,11 @@
 <div class="example-container">
   <mat-toolbar class="example-toolbar">
-    <mat-toolbar-row id="row1">
+    <mat-toolbar-row id="row">
       <!-- <button class="menu" mat-icon-button (click)="sidenav.toggle()" *ngIf="isHandset$ | async">
             <mat-icon>menu</mat-icon>
-          </button> -->
+          </button> -->    
       <h1 class="example-app-name">Welcome</h1>
-      <div class="row1-links">
+      <div class="row-links">
         <div class="home">
           <a mat-button routerLink="">Home</a>
         </div>
@@ -22,47 +22,9 @@
           <a mat-button routerLink="/contact">Contact</a>
         </div>
       </div>
-    </mat-toolbar-row>
-    <mat-toolbar-row id="row2">
-      <div class="row2-links">
-        <div class="home">
-          <a mat-button routerLink="">Home</a>
-        </div>
-        <div class="skills">
-          <a mat-button routerLink="/skills">Skills</a>
-        </div>
-        <div class="projects">
-          <a mat-button routerLink="/projects">Projects</a>
-        </div>
-        <div class="journey-so-far">
-          <a mat-button routerLink="/journey-so-far">Journey So Far</a>
-        </div>
-        <div class="Contact">
-          <a mat-button routerLink="/contact">Contact</a>
-        </div>
-      </div>
+        <button class="menu" mat-icon-button (click)="toggleSidebar()">
+          <mat-icon align="right">menu</mat-icon>
+      </button>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
-
-<!-- <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav #sidenav mode="side" opened>
-      Sidenav content
-    </mat-sidenav>
-</mat-sidenav-container> -->
-<!-- <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
-      <mat-nav-list>
-        <a href="#" mat-list-item>Menu Item 1</a>
-        <a href="#" mat-list-item>Menu Item 2</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
-  </mat-sidenav-container> -->
-<!-- <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav #sidenav class="sidenav" fixedInViewport="true"
-          [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-          [mode]="(isHandset$ | async) ? 'over' : 'side'"
-          [opened]="!(isHandset$ | async)">
-      </mat-sidenav>
-</mat-sidenav-container> -->

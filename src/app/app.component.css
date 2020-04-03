@@ -1,3 +1,20 @@
-.routes {
+/* .routes {
     background-color:#f7f7f7;
+}
+footer-presenter{
+    display:none;
+}
+
+@media only screen and (max-width: 600px) {
+    footer-presenter{
+        display:1;
+    }   
+} */
+
+mat-drawer {
+    width: 250px;
+}
+
+mat-drawer-content {
+    height:100%;
 }

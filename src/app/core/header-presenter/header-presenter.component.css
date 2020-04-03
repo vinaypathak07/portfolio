@@ -12,20 +12,18 @@
   font-weight: bold;
   color: white;
 }
-.menu {
-  display: none;
-}
-#row2{
-  display: none;
-}
-.row1-links, .row2-links {
+ .menu {
+   display: none;
+   color: white;
+ }
+.row-links {
   position: absolute;
   right: 0;
   display: flex;
   justify-content: flex-end;
   margin-right: 5%;
 }
-.row1-links div, .row2-links div{
+.row-links div {
   padding: 10px;
 }
 a {
@@ -57,34 +55,29 @@ a {
   .example-is-mobile .example-sidenav-container {
     flex: 1 0 auto;
   } */
-   @media only screen and (max-width:556px) {
-    #row1 {
-      display: none;
-    }
-    #row2 {
-      display: flex;
-    }
-    .row1-links {
+   @media only screen and (max-width:774px) {
+    .row-links {
       display:none;
     }
     a {
       font-family: Inconsolata, Monospace;
       color: white;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 12px;
     }
-    .row2-links div{
-      padding: 0px;
+    .menu {
+      display: inline;
+      color: white;
     }
-    .row2-links {
+    .mat-toolbar-row {
       display: flex;
-      justify-content: space-evenly;
-      left: 0;
-      margin-right:0%;
+      justify-content: space-between;
     }
-    .example-app-name {
-      font-size:18px;
-      /* margin-left:12px; */
+    .menu:hover {
+      cursor: pointer;
     }
+    /* .example-app-name {
+      font-size:14px;
+       */
   } 
   

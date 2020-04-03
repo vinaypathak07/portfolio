@@ -12,10 +12,13 @@ import { EmailValidationService } from './shared/email-validation.service';
 import { environment } from '../environments/environment';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MaterialModule } from './material/material.module';
 firebase.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ firebase.initializeApp(environment.firebase);
     CoreModule,
     HomeModule,
     HttpClientModule,
+    MaterialModule
   ],
   providers: [SaveUserService, EmailValidationService],
   bootstrap: [AppComponent]
