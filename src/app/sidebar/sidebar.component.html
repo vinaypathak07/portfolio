@@ -1,17 +1,23 @@
 <div class="row-links">
-    <div class="home">
-      <a mat-button routerLink="">Home</a>
+  <a routerLink="">
+    <div
+      class="home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
     </div>
-    <div class="skills">
-      <a mat-button routerLink="/skills">Skills</a>
-    </div>
-    <div class="projects">
-      <a mat-button routerLink="/projects">Projects</a>
-    </div>
-    <div class="journey-so-far">
-      <a mat-button routerLink="/journey-so-far">Journey So Far</a>
-    </div>
-    <div class="Contact">
-      <a mat-button routerLink="/contact">Contact</a>
-    </div>
-  </div>
+  </a>
+  <a routerLink="/skills">
+    <div class="skills" routerLinkActive="active">Skills</div>
+  </a>
+  <a routerLink="/projects">
+    <div class="projects" routerLinkActive="active">Projects</div>
+  </a>
+  <a routerLink="/journey-so-far">
+    <div class="journey-so-far" routerLinkActive="active">Journey So Far</div>
+  </a>
+  <a routerLink="/contact">
+    <div class="Contact" routerLinkActive="active">Contact</div>
+  </a>
+</div>
