@@ -1,9 +1,9 @@
-<div class="example-container">
+<div id="toolbar" [ngClass]="{'example-container':isSticky}">
   <mat-toolbar class="example-toolbar">
     <mat-toolbar-row id="row">
       <!-- <button class="menu" mat-icon-button (click)="sidenav.toggle()" *ngIf="isHandset$ | async">
             <mat-icon>menu</mat-icon>
-          </button> -->    
+          </button> -->
       <h1 class="example-app-name">Welcome</h1>
       <div class="row-links">
         <div class="home">
@@ -22,8 +22,8 @@
           <a mat-button routerLink="/contact">Contact</a>
         </div>
       </div>
-        <button class="menu" mat-icon-button (click)="toggleSidebar()">
-          <mat-icon align="right">menu</mat-icon>
+      <button class="menu" mat-icon-button (click)="toggleSidebar()">
+        <mat-icon align="right">menu</mat-icon>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>

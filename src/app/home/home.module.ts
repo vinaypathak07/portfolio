@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { DownloadDialogComponent } from './download-dialog/download-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SendMailService } from '../shared/send-mail.service';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
     declarations : [
@@ -14,7 +15,8 @@ import { SendMailService } from '../shared/send-mail.service';
     imports: [
         CommonModule,
         MaterialModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HomeRoutingModule
     ],
     exports: [
         HomeComponent

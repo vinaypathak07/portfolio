@@ -1,12 +1,13 @@
 .journey-so-far {
-    min-height:calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
+  /* position:relative; */
 }
 
-h3{
-    margin: 0;
-    font-size: 24px;
-    font-family: "Inconsolata", monospace;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
+h3 {
+  margin: 0;
+  font-size: 24px;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }

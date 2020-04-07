@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/
 export class HeaderPresenterComponent implements OnInit {
 
   sideBarOpened = false;
+  isSticky = false;
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -23,9 +24,18 @@ export class HeaderPresenterComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
 
   onResize(event) {
-  // console.log(event.target.innerWidth);
-  if (this.sideBarOpened && event.target.innerWidth >= 774) {
+    // console.log(event.target.innerWidth);
+    if (this.sideBarOpened && event.target.innerWidth >= 774) {
       this.toggleSidebar();
+    }
   }
+
+  @HostListener('window:scroll', ['$event'])
+
+  onWindowScroll(event) {
+    let host = document.getElementById('toolbar');
+    this.isSticky = window.pageYOffset > host.offsetTop ? true : false;
+    // console.log(this.isSticky);
+    // console.log("scrolling..." + event);
   }
 }

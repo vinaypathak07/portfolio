@@ -5,12 +5,13 @@
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; */
+  /* overflow: hidden; */
 }
-.card-journey{
+/* .card-journey{
   display: flex;
   flex-direction: column;
 
-}
+} */
 .card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
@@ -67,15 +68,14 @@ button {
     min-height: 500px;
     padding: 60px;
   }
-  .row1-links {
-    /* position: absolute; */
+  /* .row1-links {
     display: flex;
     justify-content: center;
     margin-right: 5%;
   }
   .row1-links div{
     padding: 10px;
-  }
+  } */
   a {
     font-family: Inconsolata, Monospace;
     color: white;
