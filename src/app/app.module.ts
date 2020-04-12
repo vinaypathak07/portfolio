@@ -14,6 +14,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MaterialModule } from './material/material.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 firebase.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ firebase.initializeApp(environment.firebase);
     CoreModule,
     HomeModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [SaveUserService, EmailValidationService],
   bootstrap: [AppComponent]
