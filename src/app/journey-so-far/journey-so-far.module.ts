@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JourneySoFarComponent } from './journey-so-far.component';
 import { JourneySoFarRoutingModule } from './journey-so-far-routing.module';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { JourneySoFarRoutingModule } from './journey-so-far-routing.module';
   ],
   imports: [
     CommonModule,
-    JourneySoFarRoutingModule
+    JourneySoFarRoutingModule,
+    MaterialModule
   ],
   exports: [
     JourneySoFarComponent

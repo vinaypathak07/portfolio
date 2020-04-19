@@ -1,0 +1,101 @@
+.card-container {
+  min-height: calc(100vh - 104px);
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  row-gap: 25px;
+  column-gap: 25px;
+  padding: 20px;
+}
+
+.card {
+  height: 100%;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  flex-shrink: 0;
+}
+.mat-card-header .mat-card-title {
+  margin-bottom: 0px;
+}
+.mat-card-title {
+  font-family: Inconsolata, Monospace;
+  font-weight: bold;
+  font-size: 24px;
+}
+div .mat-card-header-text {
+  margin-right: 0;
+  margin-left: 0;
+}
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  border-radius: 0px;
+}
+.mat-card-content {
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mat-card-footer {
+  margin:0;
+}
+.company-logo {
+  width: 60px;
+  height: 60px;
+  margin-right:30px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 24px;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.certificate {
+  width:85%;
+  height:85%;
+  border: 13px solid #3b4142;
+  border-radius: 2px;
+}
+
+.certificate:hover {
+  border: 13px solid #2c3335;
+}
+
+.mat-card:hover {
+  box-shadow: -3px -2px 4px 3px rgba(0,0,0,0.3);
+  /* 0 -4px 6px 0 white, 0 -4px 6px 0 white ,0 -4px 6px 0 white */
+  /* box-shadow: -15px 0 -15px -15px inset;  */
+}
+
+@media only screen and (max-width: 600px) {
+  .card-container {
+    min-height: calc(100vh - 104px);
+    display: grid;
+    grid-template-columns: 4fr;
+    row-gap: 25px;
+    column-gap: 25px;
+    padding: 20px;
+  }
+    .certificate {
+      width:85%;
+      height:85%;
+      border: 10px solid #2c3335;
+      border-radius:3px;
+    }
+    .certificate:hover {
+      border: 10px solid #2c3335;
+    }
+}

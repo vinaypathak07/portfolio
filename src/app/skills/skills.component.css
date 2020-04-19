@@ -68,7 +68,8 @@ img {
   bottom: 0;
   background-color: #eaf0f1;
 }
-.mat-card-footer .bar {
+ .bar {
+  width:60%;
   display: flex;
   justify-content: flex-end;
   align-items: center;

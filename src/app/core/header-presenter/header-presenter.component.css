@@ -39,9 +39,12 @@
 }
 a {
   font-family: Inconsolata, Monospace;
+  /* font: 500 20px/26px "Google Sans",sans-serif; */
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* .example-container {
@@ -66,7 +69,7 @@ a {
   .example-is-mobile .example-sidenav-container {
     flex: 1 0 auto;
   } */
-@media only screen and (max-width: 774px) {
+@media only screen and (max-width: 930px) {
   .row-links {
     display: none;
   }

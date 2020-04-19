@@ -25,7 +25,7 @@ export class HeaderPresenterComponent implements OnInit {
 
   onResize(event) {
     // console.log(event.target.innerWidth);
-    if (this.sideBarOpened && event.target.innerWidth >= 774) {
+    if (this.sideBarOpened && event.target.innerWidth >= 930) {
       this.toggleSidebar();
     }
   }

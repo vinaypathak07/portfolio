@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'journey-so-far',
     loadChildren: () => import('./journey-so-far/journey-so-far.module').then(mod => mod.JourneySoFarModule)
+  },
+  {
+    path: 'certificates',
+    loadChildren: () => import('./certificates/certificates.module').then(mod => mod.CertificatesModule)
   }
 ];
 

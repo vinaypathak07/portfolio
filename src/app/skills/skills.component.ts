@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-
-  constructor() { }
+  constructor() {
+    console.log('constructor');
+   }
 
   ngOnInit() {
   }

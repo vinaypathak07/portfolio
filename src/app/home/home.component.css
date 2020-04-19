@@ -19,16 +19,41 @@
   padding: 46px 60px 46px 60px;
   /* background-color: #74B9FF; */
 }
+.profile-name-title {
+  display: flex;
+  flex-direction: column;
+}
 .mat-card-content {
   display: flex;
   flex-direction: column;
 }
-p {
+p,
+span {
   font-family: Inconsolata, monospace;
   font-weight: bold;
   font-size: 44px;
   padding: 20px;
+  position: relative;
 }
+
+span::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 4px;
+  left: 50%;
+  position: absolute;
+  background: #2c3335;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+span:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 .mat-card-content.objective {
   display: flex;
   justify-content: center;
@@ -81,5 +106,12 @@ button {
     color: white;
     font-weight: bold;
     font-size: 18px;
+  }
+  span::after {
+    display: none;
+  }
+  span:hover::after {
+    /* width: 100%;
+    left: 0; */
   }
 }
