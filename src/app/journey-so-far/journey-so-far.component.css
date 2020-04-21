@@ -1,12 +1,13 @@
 .journey-so-far {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 104px);
   /* position:relative; */
   display:grid;
   grid-template-rows: 3fr 3fr 3fr;
   grid-template-columns: 1fr;
-  row-gap: 25px;
+  /* row-gap: 25px; */
   justify-content: center;
   align-items: center;
+  padding:20px;
 }
 
 .card-container {
@@ -16,6 +17,17 @@
   justify-content: center;
   align-items: center;
 }
+.card-container::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 30px;
+  height: 100%;
+  width: 9px;
+  background: #d7e4ed;
+  z-index: -1;
+}
+
 .inner {
   height:120px;
   width:100px;
@@ -27,6 +39,7 @@
   height:50px;
   border: 1px solid black;
   border-radius:50%;
+  background-color:teal ;
   /* margin-right:40px;
   margin-bottom: 60px; */
 }
