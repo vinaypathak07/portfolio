@@ -53,7 +53,7 @@ export class DownloadDialogComponent implements OnInit {
         (response: any) => {
           this.emailExists = response.smtp_check;
           if (!this.emailExists) {
-            this.openSnackBar({ message: 'Email not valid!', action: 'OK', duration: 3000 });
+            this.openSnackBar({ message: 'EMAIL NOT VALID!', action: 'OK', duration: 3000 });
           } else {
             // this.downloadFile();
             this.openPdf();
@@ -106,11 +106,11 @@ export class DownloadDialogComponent implements OnInit {
       }
     });
   }
-  // sendMail() {
-  //   this.sendMailService.send(this.downloadForm.value)
-  //     .subscribe(
-  //       (response) => console.log('mail sent'),
-  //       (error) => console.log(error)
-  //     );
-  // }
+  sendMail() {
+    this.sendMailService.send(this.downloadForm.value)
+      .subscribe(
+        (response) => console.log('mail sent'),
+        (error) => console.log(error)
+      );
+  }
 }
