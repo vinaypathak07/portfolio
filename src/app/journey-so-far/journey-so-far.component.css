@@ -1,5 +1,5 @@
 .journey-so-far {
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 84px);
   /* position:relative; */
   display:grid;
   grid-template-rows: 3fr 3fr 3fr;
@@ -7,17 +7,17 @@
   /* row-gap: 25px; */
   justify-content: center;
   align-items: center;
-  padding:20px;
+  padding:20px 20px 0 20px;
 }
 
-.card-container {
+.card-after-container {
   display: flex;
   height:100%;
   width: 100%;
-  justify-content: center;
+  justify-content:flex-end;
   align-items: center;
 }
-.card-container::before {
+.card-after-container::before {
   content: '';
   position: relative;
   top: 0;
@@ -28,13 +28,44 @@
   z-index: -1;
 }
 
+.card-before-container {
+  display: flex;
+  height:100%;
+  width: 100%;
+  justify-content:flex-start;
+  align-items: center;
+}
+.card-before-container::after {
+  content: '';
+  position: relative;
+  top: 0;
+  right: 53px;
+  height: 100%;
+  width: 9px;
+  background: #d7e4ed;
+  z-index: -1;
+}
+
+
 .inner {
   height:120px;
   width:100px;
 }
-.timeline {
+.card-after-container .inner .timeline{
   top:0;
   left:0;
+  width:50px;
+  height:50px;
+  border: 1px solid black;
+  border-radius:50%;
+  background-color:teal ;
+  /* margin-right:40px;
+  margin-bottom: 60px; */
+}
+
+.card-before-container .inner .timeline{
+  top:0;
+  margin-left:26px;
   width:50px;
   height:50px;
   border: 1px solid black;
@@ -49,6 +80,28 @@ mat-card {
   width: 600px;
   padding:0;
   border-radius: 0;
+}
+
+.card-after mat-card::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 14px solid transparent;
+  border-right: 14px solid tomato;
+}
+
+.card-before mat-card::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 100%;
+  height: 0;
+  width: 0;
+  border: 14px solid transparent;
+  border-left: 14px solid tomato;
 }
 
 .mat-card-content {
