@@ -7,22 +7,23 @@
       <h1 class="example-app-name">WELCOME</h1>
       <div class="row-links">
         <div class="home">
-          <a mat-button routerLink="">HOME</a>
+          <a mat-button routerLink="" routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }" >HOME</a>
         </div>
         <div class="skills">
-          <a mat-button routerLink="/skills">SKILLS</a>
+          <a mat-button routerLink="/skills" routerLinkActive="active">SKILLS</a>
         </div>
         <div class="projects">
-          <a mat-button routerLink="/projects">PROJECTS</a>
+          <a mat-button routerLink="/projects" routerLinkActive="active">PROJECTS</a>
         </div>
         <div class="journey-so-far">
-          <a mat-button routerLink="/journey-so-far">JOURNEY SO FAR</a>
+          <a mat-button routerLink="/journey-so-far" routerLinkActive="active">JOURNEY SO FAR</a>
         </div>
         <div class="certificates">
-          <a mat-button routerLink="/certificates">CERTIFICATES</a>
+          <a mat-button routerLink="/certificates" routerLinkActive="active">CERTIFICATES</a>
         </div>
         <div class="Contact">
-          <a mat-button routerLink="/contact">CONTACT</a>
+          <a mat-button routerLink="/contact" routerLinkActive="active">CONTACT</a>
         </div>
       </div>
       <button class="menu" mat-icon-button (click)="toggleSidebar()">

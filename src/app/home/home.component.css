@@ -41,8 +41,8 @@ span::after {
   bottom: 0;
   content: "";
   display: block;
-  height: 4px;
-  border-radius: 4px;
+  height: 5px;
+  border-radius: 5px 5px 0 0;
   left: 50%;
   position: absolute;
   background: #2c3335;

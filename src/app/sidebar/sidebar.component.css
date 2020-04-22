@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 .row-links {
+  /* position: fixed; */
   font-family: Inconsolata, monospace;
   /* flex: 1; */
+  margin-top: 64px;
 }
 .row-links div {
   padding: 16px 16px 16px 16px;
