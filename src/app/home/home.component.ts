@@ -9,6 +9,7 @@ import { DownloadDialogComponent } from './download-dialog/download-dialog.compo
 })
 export class HomeComponent implements OnInit {
 
+  wait = false;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {

@@ -68,6 +68,13 @@ img {
   bottom: 0;
   background-color: #eaf0f1;
 }
+mat-card-footer div {
+  height: 100%;
+  background-image: linear-gradient(to left, #00c6ff 0%, #00c6ff 51%, #0072ff 100%)
+}
+mat-card-footer div:hover{
+  background-position: right center;
+}
  .bar {
   width:60%;
   display: flex;

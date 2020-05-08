@@ -79,6 +79,10 @@
   margin:0;
 }
 
+#second-card {
+  margin-left: 50px;
+}
+
 .image {
   display: flex;
   justify-content: center;
@@ -112,13 +116,13 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: 1fr auto;
     /* grid-column-gap: 10px; */
-    grid-row-gap: 10px;
+    grid-row-gap: 20px;
     padding: 40px 40px 40px 40px;
   }
   .mat-card {
     display: flex;
     flex-direction: column;
-    height: 220px;
+    height: 470px;
     padding: 0;
   }
   .mat-card-title {
@@ -132,5 +136,11 @@
   .hr-line {
     display: block;
     border-bottom: 1px solid lightgray;
+  }
+  #first-card {
+    /* margin-left:80px; */
+  }
+  #second-card {
+    
   }
 }

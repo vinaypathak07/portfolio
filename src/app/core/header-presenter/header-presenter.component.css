@@ -27,6 +27,22 @@
   display: none;
   color: white;
 }
+
+.mic-svg {
+  margin-left: 15px;
+  cursor: pointer ;
+}
+
+p {
+  font-family: Inconsolata, Monospace;
+  /* font: 500 20px/26px "Google Sans",sans-serif; */
+  color: white;
+  /* font-weight: bold; */
+  font-weight:bold;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
 .row-links {
   position: absolute;
   right: 0;
@@ -48,7 +64,20 @@ a {
   /* letter-spacing: 1px; */
 }
 
-.active{
+a:hover {
+  border-bottom: 0 solid coral;
+  border-width: 3px;
+  /* border-radius:50%; */
+}
+
+.active {
+   /* background: coral; */
+   border-bottom: 0 solid coral;
+   border-width: 3px;
+   /* border-radius:50%; */
+}
+.active::after {
+ 
 }
 
 /* .example-container {

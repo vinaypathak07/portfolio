@@ -57,6 +57,7 @@ export class DownloadDialogComponent implements OnInit {
           } else {
             // this.downloadFile();
             this.openPdf();
+            // this.openSnackBar({ message: 'THANK YOU FOR DOWNLOADING THE RESUME', action: '', duration: 3000 });
             // this.sendMail();
           }
         },
@@ -67,9 +68,12 @@ export class DownloadDialogComponent implements OnInit {
 
   openSnackBar(event) {
     this._snackBar.open(event.message, event.action, {
-      duration: event.duration,
+      duration: event.duration, panelClass: ['red-snackbar']
     });
   }
+
+  // Positioning the snackbar: {duration: event.duration, verticalPosition: 'bottom', horizontalPosition: 'end'  //'start' | 'center' | 'end' | 'left' | 'right'}
+
   // Downloading File
   // downloadFile() {
   //   this.downloadService.downloadPdf(this.pdfUrl).subscribe(
@@ -87,6 +91,8 @@ export class DownloadDialogComponent implements OnInit {
       // Insert url into an <img> tag to "download"
       const openedWindow = window.open(url);
       // openedWindow.document.write("<h3> Thank you for downloading </h3>");
+      
+
     }).catch(function (error) {
       // A full list of error codes is available at
       // https://firebase.google.com/docs/storage/web/handle-errors
