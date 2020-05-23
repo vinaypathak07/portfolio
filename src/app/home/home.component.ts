@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DownloadDialogComponent } from './download-dialog/download-dialog.component';
-import { SpeechRecognitionService } from '../shared/speech-recognition.service';
-import { MatSnackBar } from '@angular/material';
-import { BrodcastRecognizedVoiceService } from '../shared/brodcast-recognized-voice.service';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimation, fadeAnimation } from '../animations';
 
@@ -17,32 +12,9 @@ export class HomeComponent implements OnInit {
 
   wait = false;
 
-  constructor(public dialog: MatDialog, private broadcastService: BrodcastRecognizedVoiceService, private _snackbar: MatSnackBar) { 
-    this.broadcastService.recognizedVoice.subscribe((result: string) => {
-      if ( result.toLowerCase() === 'download resume') {
-        this.openDialog();
-      }
-    });
-  }
+  constructor() { }
 
-  ngOnInit() {
-    
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(DownloadDialogComponent, {
-      width: '400px',
-      height: '400px',
-      autoFocus: true,
-      data: { myName: 'Vinay Pathak' },
-      panelClass: 'myClass'
-    });
-
-    dialogRef.afterClosed().subscribe(
-      (result) => {
-        console.log('Returned From dialog' + result);
-      });
-  }
+  ngOnInit() { }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData[ 'animation' ];
