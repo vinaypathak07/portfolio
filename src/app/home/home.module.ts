@@ -6,17 +6,23 @@ import { DownloadDialogComponent } from './download-dialog/download-dialog.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { SendMailService } from '../shared/send-mail.service';
 import { HomeRoutingModule } from './home-routing.module';
+import { ViewOneComponent } from './view-one/view-one.component';
+import { ViewTwoComponent } from './view-two/view-two.component';
+
+
 
 @NgModule({
     declarations : [
         HomeComponent,
-        DownloadDialogComponent
+        DownloadDialogComponent,
+        ViewOneComponent,
+        ViewTwoComponent,
     ],
     imports: [
         CommonModule,
         MaterialModule,
         ReactiveFormsModule,
-        HomeRoutingModule
+        HomeRoutingModule,
     ],
     exports: [
         HomeComponent

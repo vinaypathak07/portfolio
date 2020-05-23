@@ -17,6 +17,10 @@
   background: -webkit-linear-gradient(to right, #00c6ff, #0072ff); 
   background: linear-gradient(to right, #00c6ff, #0072ff); */
 }
+
+.initial {
+  display: flex;
+}
 .example-app-name {
   font-family: Inconsolata, monospace;
   /* font: 500 20px/26px "Google Sans",sans-serif; */
@@ -33,7 +37,7 @@
   cursor: pointer ;
 }
 
-p {
+span {
   font-family: Inconsolata, Monospace;
   /* font: 500 20px/26px "Google Sans",sans-serif; */
   color: white;
@@ -74,6 +78,7 @@ a:hover {
    /* background: coral; */
    border-bottom: 0 solid coral;
    border-width: 3px;
+   /* color: coral; */
    /* border-radius:50%; */
 }
 .active::after {
@@ -119,6 +124,9 @@ a:hover {
   .mat-toolbar-row {
     display: flex;
     justify-content: space-between;
+  }
+  .initial {
+    display:flex;
   }
   .menu:hover {
     cursor: pointer;

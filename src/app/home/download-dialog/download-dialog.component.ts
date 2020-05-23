@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild , ElementRef} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SaveUserService } from 'src/app/shared/save-user.service';
@@ -9,6 +9,8 @@ import * as FileSaver from 'file-saver';
 import { SendMailService } from 'src/app/shared/send-mail.service';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
+import { BrodcastRecognizedVoiceService } from 'src/app/shared/brodcast-recognized-voice.service';
+import { SpeechRecognitionService } from 'src/app/shared/speech-recognition.service';
 
 
 @Component({
@@ -18,6 +20,9 @@ import 'firebase/storage';
 })
 export class DownloadDialogComponent implements OnInit {
 
+  @ViewChild('input1', {static: false}) input1: ElementRef;
+  @ViewChild('field1', {static: false}) field1: ElementRef;
+
   name = '';
   emailExists = false;
   user: User[] = [];
@@ -26,7 +31,36 @@ export class DownloadDialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DownloadDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, private save: SaveUserService,
     private emailValidation: EmailValidationService,
-    private _snackBar: MatSnackBar, private sendMailService: SendMailService) { }
+    private _snackBar: MatSnackBar, private sendMailService: SendMailService, private brodcastService: BrodcastRecognizedVoiceService,private speechRecognitionService: SpeechRecognitionService) { 
+       
+      this.brodcastService.recognizedVoice.subscribe((result: string) => {
+          if (result.toLowerCase() === 'cancel') {
+            this.dialogRef.close();
+          }
+          if (result.toLowerCase() === 'name' || result.toLowerCase() === 'name' ) {
+              this.enterNameAndEmail(result);
+          } 
+       });
+    }
+
+  enterNameAndEmail(field: string) {
+    console.log('enter name and email');
+    // this.brodcastService.recognizedVoice.subscribe((name: string) => {
+    //     // this.name = name;
+    //     console.log(name);
+    //     // this.downloadForm.setValue({userName: name});
+    // });
+    // console.log(this.field1.nativeElement);
+    this.speechRecognitionService.record().subscribe((value) => {
+      console.log(value);
+      let i = 0;
+      setTimeout(() => {
+        if (i < value.length) {
+        this.input1.nativeElement.value += value.charAt(i);
+        i++;
+        }}, 50);
+    });
+  }
 
   ngOnInit() {
     this.downloadForm = new FormGroup({
@@ -68,7 +102,7 @@ export class DownloadDialogComponent implements OnInit {
 
   openSnackBar(event) {
     this._snackBar.open(event.message, event.action, {
-      duration: event.duration, panelClass: ['red-snackbar']
+      duration: event.duration,
     });
   }
 

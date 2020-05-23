@@ -19,7 +19,7 @@ firebase.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

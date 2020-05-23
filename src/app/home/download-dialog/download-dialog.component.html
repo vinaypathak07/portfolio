@@ -2,9 +2,9 @@
     <div mat-dialog-content>
         <form class="download-form" [formGroup]="downloadForm" (ngSubmit)="onSubmit()">
             <p>
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" #field1>
                   <mat-label class="label">Enter your name</mat-label>
-                  <input matInput formControlName="userName" [(ngModel)]="name" placeholder="Enter your name">
+                  <input #input1 matInput formControlName="userName" [(ngModel)]="name" placeholder="Enter your name">
                 </mat-form-field>
             </p>
             <p>

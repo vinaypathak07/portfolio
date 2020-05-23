@@ -4,7 +4,8 @@
       <!-- <button class="menu" mat-icon-button (click)="sidenav.toggle()" *ngIf="isHandset$ | async">
             <mat-icon>menu</mat-icon>
           </button> -->
-      <h1 class="example-app-name">WELCOME</h1>
+      <div class="initial">
+        <h1 class="example-app-name">WELCOME</h1>
       <svg
         *ngIf="!listen"
         (click)="onListening()"
@@ -36,7 +37,8 @@
         />
         <path d="M0 0h24v24H0z" fill="none" />
       </svg>
-      <p *ngIf="listen">Listening....</p>
+      <span *ngIf="listen">Listening....</span>
+      </div>
       <div class="row-links">
         <div class="home">
           <a

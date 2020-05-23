@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/
 import { SpeechRecognitionService } from '../../shared/speech-recognition.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { Subject } from 'rxjs';
+import { BrodcastRecognizedVoiceService } from 'src/app/shared/brodcast-recognized-voice.service';
 
 @Component({
   selector: 'header-presenter',
@@ -15,11 +17,12 @@ export class HeaderPresenterComponent implements OnInit {
   listen = false;
   speechData;
   checkCount;
+  recognizedWord = new Subject();
 
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
   constructor(private speechRecognitionService: SpeechRecognitionService, private router: Router,
-    private route: ActivatedRoute, private _snackBar: MatSnackBar) {
+    private route: ActivatedRoute, private _snackBar: MatSnackBar, private broadcastService: BrodcastRecognizedVoiceService) {
     this.checkCount = 0;
   }
 
@@ -52,7 +55,8 @@ export class HeaderPresenterComponent implements OnInit {
   onListening() {
     this.listen = !this.listen;
     this.speechRecognitionService.record().subscribe(
-      // listener
+
+      // Listener
       (value) => {
         this.speechData = value.trim().split(' ');
         let activeRoute: string;
@@ -61,10 +65,13 @@ export class HeaderPresenterComponent implements OnInit {
             this.checkCount += 1;
             activeRoute = this.speechData[index + 1];
             if (activeRoute === 'skills' ||
+              activeRoute === 'skill' ||
               activeRoute === 'projects' ||
+              activeRoute === 'project' ||
               activeRoute === 'journey' ||
               activeRoute === 'contact' ||
               activeRoute === 'certificates' ||
+              activeRoute === 'certificate' ||
               activeRoute === 'home') {
               this.checkCount += 1;
               if (activeRoute === 'journey') {
@@ -81,6 +88,22 @@ export class HeaderPresenterComponent implements OnInit {
                 }
               }
             }
+          } else if ( str === 'download' ) {
+              let next_word = this.speechData[index + 1];
+              console.log(str);
+              if ( next_word.toLowerCase() === 'resume') {
+                  // this.recognizedWord.next(next_word);
+                  console.log(next_word);
+                  this.broadcastService.setRecognizedWord( str + ' ' + next_word);
+              } else {
+                this.broadcastService.setRecognizedWord(str);
+              }
+          } else if (str === 'cancel') {
+            this.broadcastService.setRecognizedWord(str);
+          } else if( str === 'name' || str === 'email')  {
+            this.broadcastService.setRecognizedWord(str);
+          } else {
+            this.broadcastService.setRecognizedWord(str);
           }
         });
         console.log(this.checkCount);
@@ -92,20 +115,19 @@ export class HeaderPresenterComponent implements OnInit {
           this.checkCount = 0;
         }
       },
-      // errror
+
+      // On Errror
       (err) => {
         console.log(err);
-        if (err.error == 'no-speech') {
-          console.log('--restatring service--');
-          // this.activateSpeechSearchMovie();
+        if (err.error === 'no-speech') {
+          // console.log('Restatring Service');
         }
       },
-      // completion
+
+      // On Completion
       () => {
-        // this.showSearchButton = true;
         this.listen = false;
-        console.log('--complete--');
-        // this.activateSpeechSearchMovie();
+        // console.log('Complete');
       });
   }
 
