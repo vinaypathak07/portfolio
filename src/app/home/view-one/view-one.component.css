@@ -1,93 +1,118 @@
 .profile-name-title {
+  display: flex;
+  flex-direction: column;
+}
+.mat-card {
+  min-height: 430px;
+  border-radius: 0;
+  box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.2),
+    0 -4px 10px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+p,
+span {
+  font-family: Inconsolata, monospace;
+  font-weight: bold;
+  font-size: 44px;
+  padding: 20px;
+  position: relative;
+}
+span::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 5px;
+  border-radius: 5px 5px 0 0;
+  left: 50%;
+  position: absolute;
+  background: #2c3335;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+span:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.mat-card-content.objective {
+  display: flex;
+  justify-content: center;
+}
+.profile-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px 0 30px;
+}
+.download-resume {
+  display: flex;
+  justify-content: center;
+}
+.mat-button {
+  font-family: Inconsolata, monospace;
+  /* font-weight: bold; */
+  color: white;
+}
+img {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  padding: 10px;
+}
+.handles {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+button {
+  /* font-family: Inconsolata, monospace; */
+  background-color: #3f51b5;
+}
+/* .profile-img mat-card {
+    padding:0;
+    border-radius: 50%;
+  } */
+@media only screen and (max-width: 700px) {
+  .card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      min-height: 525px;
+      padding: 35px;
+    }
+  .handles {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px 20px 30px 20px;
   }
   .mat-card {
-    height: 430px;
-    border-radius: 0;
-    box-shadow: 0 4px 10px 0px rgba(0,0,0,0.2), 0 -4px 10px 0 rgba(0,0,0,0.14), 0 3px 10px 0 rgba(0,0,0,0.12);
-  }
-  
-  .mat-card-content {
-    display: flex;
-    flex-direction: column;
+      min-height: 600px;
+      padding: 25px;
   }
   p,
-  span {
-    font-family: Inconsolata, monospace;
-    font-weight: bold;
-    font-size: 44px;
-    padding: 20px;
-    position: relative;
-  }
-  span::after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 5px;
-    border-radius: 5px 5px 0 0;
-    left: 50%;
-    position: absolute;
-    background: #2c3335;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-   span:hover::after {
-    width: 100%;
-    left: 0;
-  }
-  
-  .mat-card-content.objective {
-    display: flex;
-    justify-content: center;
-  }
-  .profile-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+span {
+  font-family: Inconsolata, monospace;
+  font-weight: bold;
+  font-size: 44px;
+  padding: 26px;
+  position: relative;
+}
+
   .download-resume {
     display: flex;
     justify-content: center;
-  }
-  .mat-button {
-    font-family: Inconsolata, monospace;
-    /* font-weight: bold; */
-    color: white;
-  }
-  img {
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    padding: 10px;
+    padding: 15px;
   }
   .handles {
     display: flex;
     justify-content: space-evenly;
-    padding: 20px;
+    padding: 30px 20px 30px 20px;
   }
-  button {
-    /* font-family: Inconsolata, monospace; */
-    background-color: #3f51b5;
-  }
-  /* .profile-img mat-card {
-    padding:0;
-    border-radius: 50%;
-  } */
-  @media only screen and (max-width: 600px) {
-    /* .card {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      min-height: 525px;
-      padding: 60px;
-    } */
-    .handles {
-      display: flex;
-      justify-content: space-evenly;
-      padding: 30px 20px 0 20px;
-    }
-    /* .row1-links {
+  /* .row1-links {
       display: flex;
       justify-content: center;
       margin-right: 5%;
@@ -95,18 +120,13 @@
     .row1-links div{
       padding: 10px;
     } */
-    a {
-      font-family: Inconsolata, Monospace;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    span::after {
-      display: none;
-    }
-    span:hover::after {
-      /* width: 100%;
-      left: 0; */
-    }
+  a {
+    font-family: Inconsolata, Monospace;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
   }
-  
+  span::after {
+    display: none;
+  }
+}
