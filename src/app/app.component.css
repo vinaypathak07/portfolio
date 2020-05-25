@@ -12,6 +12,14 @@ footer-presenter{
 } */
 .routes {
  margin-top: 64px;
+ /* background: #7F00FF; 
+ background: -webkit-linear-gradient(to right, #E100FF, #7F00FF); 
+ background: linear-gradient(to right, #E100FF, #7F00FF);  */
+ background: #f5f5f5;
+ /* background: #fd746c;  
+ background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
+ background: linear-gradient(to right, #ff9068, #fd746c); */
+ 
 }
 mat-drawer {
   width: 250px;

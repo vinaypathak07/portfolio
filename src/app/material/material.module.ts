@@ -15,7 +15,9 @@ import {
     MatSnackBarModule,
     MatListModule,
     MatTooltipModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatSelectModule,
 } from '@angular/material';
 
 @NgModule({
@@ -33,7 +35,9 @@ import {
         MatSnackBarModule,
         MatListModule,
         MatTooltipModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatSelectModule,
+        MatRadioModule
     ],
     exports: [
         CommonModule,
@@ -48,7 +52,10 @@ import {
         MatInputModule,
         MatListModule,
         MatTooltipModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatSnackBarModule,
+        MatMenuModule,
+        MatRadioModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

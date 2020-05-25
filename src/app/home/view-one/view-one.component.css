@@ -57,6 +57,7 @@ span:hover::after {
   font-family: Inconsolata, monospace;
   /* font-weight: bold; */
   color: white;
+  font-weight: bold;
 }
 img {
   width: 40px;
@@ -71,36 +72,28 @@ img {
 }
 button {
   /* font-family: Inconsolata, monospace; */
-  background-color: #3f51b5;
+  background: linear-gradient(to right, #E100FF, #7F00FF);
 }
-/* .profile-img mat-card {
-    padding:0;
-    border-radius: 50%;
-  } */
+
 @media only screen and (max-width: 700px) {
-  .card {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      min-height: 525px;
-      padding: 35px;
-    }
+
   .handles {
     display: flex;
     justify-content: space-evenly;
     padding: 30px 20px 30px 20px;
   }
   .mat-card {
-      min-height: 600px;
-      padding: 25px;
+    min-height: 600px;
+    padding: 25px;
   }
   p,
-span {
-  font-family: Inconsolata, monospace;
-  font-weight: bold;
-  font-size: 44px;
-  padding: 26px;
-  position: relative;
-}
+  span {
+    font-family: Inconsolata, monospace;
+    font-weight: bold;
+    font-size: 44px;
+    padding: 26px;
+    position: relative;
+  }
 
   .download-resume {
     display: flex;
@@ -112,14 +105,7 @@ span {
     justify-content: space-evenly;
     padding: 30px 20px 30px 20px;
   }
-  /* .row1-links {
-      display: flex;
-      justify-content: center;
-      margin-right: 5%;
-    }
-    .row1-links div{
-      padding: 10px;
-    } */
+
   a {
     font-family: Inconsolata, Monospace;
     color: white;

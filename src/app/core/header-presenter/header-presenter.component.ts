@@ -18,6 +18,11 @@ export class HeaderPresenterComponent implements OnInit {
   speechData;
   checkCount;
   recognizedWord = new Subject();
+  displayUnchecked = false;
+  appliedColor = '#4f5759';
+  themes = [{ theme: 'Light Black And White', displayUnchecked: false, color: '#2c3335'},
+            { theme: 'Pink And Purple', displayUnchecked: true, color: '#f52a99' },
+            { theme: 'Another Color', displayUnchecked: true , color: '#9a14b5'}];
 
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
@@ -88,19 +93,19 @@ export class HeaderPresenterComponent implements OnInit {
                 }
               }
             }
-          } else if ( str === 'download' ) {
-              let next_word = this.speechData[index + 1];
-              console.log(str);
-              if ( next_word.toLowerCase() === 'resume') {
-                  // this.recognizedWord.next(next_word);
-                  console.log(next_word);
-                  this.broadcastService.setRecognizedWord( str + ' ' + next_word);
-              } else {
-                this.broadcastService.setRecognizedWord(str);
-              }
+          } else if (str === 'download') {
+            let next_word = this.speechData[index + 1];
+            console.log(str);
+            if (next_word.toLowerCase() === 'resume') {
+              // this.recognizedWord.next(next_word);
+              console.log(next_word);
+              this.broadcastService.setRecognizedWord(str + ' ' + next_word);
+            } else {
+              this.broadcastService.setRecognizedWord(str);
+            }
           } else if (str === 'cancel') {
             this.broadcastService.setRecognizedWord(str);
-          } else if( str === 'name' || str === 'email')  {
+          } else if (str === 'name' || str === 'email') {
             this.broadcastService.setRecognizedWord(str);
           } else {
             this.broadcastService.setRecognizedWord(str);
@@ -134,6 +139,19 @@ export class HeaderPresenterComponent implements OnInit {
   openSnackBar(event) {
     this._snackBar.open(event.message, event.action, {
       duration: event.duration, verticalPosition: 'top', horizontalPosition: 'start'
+    });
+  }
+
+  applyTheme(themeApplied: string) {
+    this.themes.forEach(item => {
+      if (themeApplied === item.theme ) {
+          if (item.displayUnchecked === true) {
+            item.displayUnchecked = false;
+            this.appliedColor = item.color;
+          }
+      } else {
+        item.displayUnchecked = true;
+      }
     });
   }
 
