@@ -9,13 +9,9 @@ import { slideInAnimation, fadeAnimation } from '../animations';
   // animations: [slideInAnimation]
 })
 export class HomeComponent implements OnInit {
-
   wait = false;
-
   constructor() { }
-
   ngOnInit() { }
-
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData[ 'animation' ];
   }
@@ -24,5 +20,4 @@ export class HomeComponent implements OnInit {
 //   //   duration: event.duration, verticalPosition: 'top', horizontalPosition: 'start'
 //   // });
 // }
-
 }
