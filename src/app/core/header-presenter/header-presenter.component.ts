@@ -157,6 +157,7 @@ export class HeaderPresenterComponent implements OnInit {
           this.appliedColor = item.theme.color;
           this.themeService.setThemeColor(item.theme);
         }
+        // Hello this is Vinay
       } else {
         item.displayUnchecked = true;
       }
