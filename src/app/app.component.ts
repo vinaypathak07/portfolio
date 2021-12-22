@@ -10,13 +10,15 @@ import { slideInAnimation } from './animations';
 })
 export class AppComponent {
   title = 'portfolio';
-  sideBarOpened: boolean;
+  sideBarOpened: boolean = false;
 
   sideBarToggler(event) {
     // console.log(event);
     this.sideBarOpened = event;
   }
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData[ 'animation' ];
+    if (!this.sideBarOpened) {
+      return outlet && outlet.activatedRouteData && outlet.activatedRouteData[ 'animation' ];
+    }
   }
 }

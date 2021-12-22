@@ -12,11 +12,11 @@ export class ViewOneComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private broadcastService: BrodcastRecognizedVoiceService, private _snackbar: MatSnackBar) {
     this.broadcastService.recognizedVoice.subscribe((result: string) => {
-      if ( result.toLowerCase() === 'download resume') {
+      if (result.toLowerCase() === 'download resume') {
         this.openDialog();
       }
     });
-   }
+  }
 
   ngOnInit() {
   }

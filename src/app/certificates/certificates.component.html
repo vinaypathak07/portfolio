@@ -1,53 +1,122 @@
 <div class="card-container">
-    <div class="card">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-              SMART JOULES LAB FELLOW INTERN
-          </mat-card-title>
-          <mat-card-content>
-              <img class="company-logo" src="assets/loading.gif" alt="certificate-1" />
-          </mat-card-content>
-        </mat-card-header>
+  <div class="card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          SMART JOULES LAB FELLOW INTERN
+        </mat-card-title>
         <mat-card-content>
-            <img class="certificate" mat-card-img src="assets/Joule_Lab_Internship.jpg" alt="certificate-1">
+          <img
+            class="company-logo"
+            src="assets/loading.gif"
+            alt="certificate-1"
+          />
         </mat-card-content>
-        <mat-card-footer>
-        </mat-card-footer>
-      </mat-card>
-    </div>
-    <div class="card">
-        <mat-card>
-            <mat-card-header>
-              <mat-card-title>
-                  SMART JOULES INTERNSHIP
-              </mat-card-title>
-              <mat-card-content>
-                <img class="company-logo" src="assets/loading.gif" alt="certificate-1" />
-              </mat-card-content>
-            </mat-card-header>
-            <mat-card-content>
-                <img class="certificate" mat-card-img src="assets\Vinay_Pathak_Internship.jpg" alt="certificate-2">
-            </mat-card-content>
-            <mat-card-footer>
-            </mat-card-footer>
-          </mat-card>
-    </div>
-    <div class="card">
-        <mat-card>
-            <mat-card-header>
-              <mat-card-title>
-                  INFOSYS INTERNSHIP
-              </mat-card-title>
-              <mat-card-content>
-                  <img class="company-logo" src="assets/infosys.png" style="width:80px;height:80px" alt="certificate-3" />
-              </mat-card-content>
-            </mat-card-header>
-            <mat-card-content>
-                    <img class="certificate" mat-card-img src="assets\Vinay_Pathak_Infosys_Internship.PNG" alt="certificate-3">
-            </mat-card-content>
-            <mat-card-footer>
-            </mat-card-footer>
-          </mat-card>
-    </div>
-    </div>
+      </mat-card-header>
+      <mat-card-content *ngIf="certificateImgPath">
+        <img
+          class="certificate"
+          mat-card-img
+          [src]="certificateImgPath"
+          alt="certificate-1"
+        />
+        <!-- </span> -->
+        <!-- <div *ngIf="!certificateImgPath">
+            <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+              <g fill="none" fill-rule="evenodd">
+                  <g transform="translate(1 1)" stroke-width="2">
+                      <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                      <path d="M36 18c0-9.94-8.06-18-18-18">
+                          <animateTransform
+                              attributeName="transform"
+                              type="rotate"
+                              from="0 18 18"
+                              to="360 18 18"
+                              dur="1s"
+                              repeatCount="indefinite"/>
+                      </path>
+                  </g>
+              </g>
+          </svg>
+          </div> -->
+      </mat-card-content>
+      <mat-card-content *ngIf="!certificateImgPath">
+        <svg
+          width="38"
+          height="38"
+          viewBox="0 0 38 38"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="black"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <g transform="translate(1 1)" stroke-width="2">
+              <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
+              <path d="M36 18c0-9.94-8.06-18-18-18">
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 18 18"
+                  to="360 18 18"
+                  dur="1s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </g>
+          </g>
+        </svg>
+      </mat-card-content>
+      <mat-card-footer> </mat-card-footer>
+    </mat-card>
+  </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          SMART JOULES INTERNSHIP
+        </mat-card-title>
+        <mat-card-content>
+          <img
+            class="company-logo"
+            src="assets/loading.gif"
+            alt="certificate-1"
+          />
+        </mat-card-content>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          class="certificate"
+          mat-card-img
+          src="assets\Vinay_Pathak_Internship.jpg"
+          alt="certificate-2"
+        />
+      </mat-card-content>
+      <mat-card-footer> </mat-card-footer>
+    </mat-card>
+  </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          INFOSYS INTERNSHIP
+        </mat-card-title>
+        <mat-card-content>
+          <img
+            class="company-logo"
+            src="assets/infosys.png"
+            style="width: 80px; height: 80px;"
+            alt="certificate-3"
+          />
+        </mat-card-content>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          class="certificate"
+          mat-card-img
+          src="assets\Vinay_Pathak_Infosys_Internship.PNG"
+          alt="certificate-3"
+        />
+      </mat-card-content>
+      <mat-card-footer> </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

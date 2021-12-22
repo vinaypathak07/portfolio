@@ -8,6 +8,16 @@
   /* overflow: hidden; */
   display: grid;
   grid-template-columns:  1fr 10fr 1fr;
+   /* background: #7F00FF; 
+ background: -webkit-linear-gradient(to right, #E100FF, #7F00FF); 
+ background: linear-gradient(to right, #E100FF, #7F00FF);   */
+ /* background-image: radial-gradient( circle farthest-corner at -0.8% 4.3%,  rgba(59,176,255,1) 0%, rgba(76,222,250,1) 83.6% ); */
+ /* background: #0cebeb; 
+background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);  */
+background: #fd746c;  
+ background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
+ background: linear-gradient(to right, #ff9068, #fd746c);
 }
 
 /* .mat-card {

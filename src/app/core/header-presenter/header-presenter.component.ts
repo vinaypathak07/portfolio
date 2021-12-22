@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { Subject } from 'rxjs';
 import { BrodcastRecognizedVoiceService } from 'src/app/shared/brodcast-recognized-voice.service';
+import { ApplyThemeService } from 'src/app/shared/apply-theme.service';
 
 @Component({
   selector: 'header-presenter',
@@ -20,14 +21,16 @@ export class HeaderPresenterComponent implements OnInit {
   recognizedWord = new Subject();
   displayUnchecked = false;
   appliedColor = '#4f5759';
-  themes = [{ theme: 'Light Black And White', displayUnchecked: false, color: '#2c3335'},
-            { theme: 'Pink And Purple', displayUnchecked: true, color: '#f52a99' },
-            { theme: 'Another Color', displayUnchecked: true , color: '#9a14b5'}];
+
+  themes = [{ name: 'one', displayUnchecked: false, theme: { color: '#0cebeb', gradient: 'linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb)' } },
+  { name: 'two', displayUnchecked: true, theme: { color: '#7F00FF', gradient: 'linear-gradient(to right, #E100FF, #7F00FF)' } },
+  { name: 'three', displayUnchecked: true, theme: { color: '#f857a6', gradient: 'linear-gradient(to right, #ff5858, #f857a6)' } }];
 
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
   constructor(private speechRecognitionService: SpeechRecognitionService, private router: Router,
-    private route: ActivatedRoute, private _snackBar: MatSnackBar, private broadcastService: BrodcastRecognizedVoiceService) {
+    private route: ActivatedRoute, private _snackBar: MatSnackBar, private broadcastService: BrodcastRecognizedVoiceService,
+    private themeService: ApplyThemeService) {
     this.checkCount = 0;
   }
 
@@ -64,7 +67,7 @@ export class HeaderPresenterComponent implements OnInit {
       // Listener
       (value) => {
         this.speechData = value.trim().split(' ');
-        let activeRoute: string;
+        let activeRoute: string = '';
         this.speechData.forEach((str, index) => {
           if (str === 'open') {
             this.checkCount += 1;
@@ -94,11 +97,13 @@ export class HeaderPresenterComponent implements OnInit {
               }
             }
           } else if (str === 'download') {
+            this.checkCount += 1;
             let next_word = this.speechData[index + 1];
             console.log(str);
             if (next_word.toLowerCase() === 'resume') {
               // this.recognizedWord.next(next_word);
               console.log(next_word);
+              this.checkCount += 1;
               this.broadcastService.setRecognizedWord(str + ' ' + next_word);
             } else {
               this.broadcastService.setRecognizedWord(str);
@@ -111,12 +116,14 @@ export class HeaderPresenterComponent implements OnInit {
             this.broadcastService.setRecognizedWord(str);
           }
         });
-        console.log(this.checkCount);
+        // console.log(this.checkCount);
         if (this.checkCount >= 2) {
-          this.router.navigate([activeRoute], { relativeTo: this.route });
+          if (activeRoute !== '') {
+            this.router.navigate([activeRoute], { relativeTo: this.route });
+          }
           this.checkCount = 0;
         } else {
-          this.openSnackBar({ message: `Unable to navigate.Got ${this.speechData}.Try again.`, action: 'OK', duration: 5000 });
+          this.openSnackBar({ message: `Unable to navigate. Received  ${this.speechData}. Try again.`, action: 'OK', duration: 5000 });
           this.checkCount = 0;
         }
       },
@@ -144,11 +151,12 @@ export class HeaderPresenterComponent implements OnInit {
 
   applyTheme(themeApplied: string) {
     this.themes.forEach(item => {
-      if (themeApplied === item.theme ) {
-          if (item.displayUnchecked === true) {
-            item.displayUnchecked = false;
-            this.appliedColor = item.color;
-          }
+      if (themeApplied === item.name) {
+        if (item.displayUnchecked === true) {
+          item.displayUnchecked = false;
+          this.appliedColor = item.theme.color;
+          this.themeService.setThemeColor(item.theme);
+        }
       } else {
         item.displayUnchecked = true;
       }

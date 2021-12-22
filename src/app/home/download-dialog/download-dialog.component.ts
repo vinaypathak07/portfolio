@@ -37,9 +37,13 @@ export class DownloadDialogComponent implements OnInit {
           if (result.toLowerCase() === 'cancel') {
             this.dialogRef.close();
           }
-          if (result.toLowerCase() === 'name' || result.toLowerCase() === 'name' ) {
-              this.enterNameAndEmail(result);
-          } 
+          // console.log(result);
+          // if(result.toLowerCase() === 'download' && this.downloadForm.valid ) {
+          //   this.onSubmit();
+          // }
+          // if (result.toLowerCase() === 'name' || result.toLowerCase() === 'name' ) {
+          //     this.enterNameAndEmail(result);
+          // } 
        });
     }
 

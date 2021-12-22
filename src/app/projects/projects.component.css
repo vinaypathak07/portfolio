@@ -8,6 +8,15 @@
 
   align-items: center;
   padding: 0 60px 0 60px;
+  /* background: #00c6ff; 
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+  background: linear-gradient(to right, #0072ff, #00c6ff); */
+  /* background: #0cebeb; 
+background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);  */
+background: #fd746c;  
+ background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
+ background: linear-gradient(to right, #ff9068, #fd746c);
 }
 .card {
   justify-content: center;

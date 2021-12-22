@@ -4,6 +4,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /*
+  background: #fd746c;  
+  background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
+  background: linear-gradient(to right, #ff9068, #fd746c); */
+  /* 
+  background: #0cebeb;
+  background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+  background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);  */
+
+  background: #fd746c;  
+  background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
+  background: linear-gradient(to right, #ff9068, #fd746c);
 }
 .card {
   min-height: 450px;

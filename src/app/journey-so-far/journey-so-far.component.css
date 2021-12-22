@@ -112,7 +112,7 @@ h3 {
     display: grid;
     grid-template-rows: 3fr 3fr 3fr;
     grid-template-columns: 1fr;
-    row-gap:25px;
+    row-gap: 25px;
     justify-content: center;
     align-items: center;
     padding: 10px;

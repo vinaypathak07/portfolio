@@ -72,15 +72,14 @@ export const slideInAnimation =
         //     ])
         // ]),
         transition('skills => home, projects => home, projects => skills,journey-so-far => home,journey-so-far => skills ,journey-so-far => projects, certificates => home, certificates => home, certificates => skills,certificates => projects,certificates => journey-so-far,contact => home,contact => skills,contact => projects,contact => journey-so-far,contact => certificates, ViewPageTwo => ViewPageOne', [
-            query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+            query(':enter, :leave', style({ position: 'fixed', width: '100%'}), { optional: true }),
             group([
                 query(':enter', [
-                    style({ transform: 'translateX(-100%)', background: 'linear-gradient(to right, #E100FF, #7F00FF)' 
-                     }),
+                    style({ transform: 'translateX(-100%)'}),
                     animate('0.5s ease-in-out', style({ transform: 'translateX(0%)'}))
                 ], { optional: true }),
                 query(':leave', [
-                    style({ transform: 'translateX(0%)', background: 'linear-gradient(to right, #E100FF, #7F00FF)'  }),
+                    style({ transform: 'translateX(0%)'}),
                     animate('0.5s ease-in-out', style({ transform: 'translateX(100%)'}))
                 ], { optional: true }),
             ])
@@ -89,11 +88,11 @@ export const slideInAnimation =
             query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
             group([
                 query(':enter', [
-                    style({ transform: 'translateX(100%)', background: 'linear-gradient(to right, #E100FF, #7F00FF)'  }),
+                    style({ transform: 'translateX(100%)'}),
                     animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
                 ], { optional: true }),
                 query(':leave', [
-                    style({ transform: 'translateX(0%)', background: 'linear-gradient(to right, #E100FF, #7F00FF)'  }),
+                    style({ transform: 'translateX(0%)'}),
                     animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
                 ], { optional: true }),
             ])

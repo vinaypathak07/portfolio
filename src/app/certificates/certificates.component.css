@@ -5,6 +5,14 @@
   row-gap: 25px;
   column-gap: 25px;
   padding: 20px;
+  /*
+    background: #0cebeb; 
+    background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+    background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+   */
+  background: #fd746c;
+  background: -webkit-linear-gradient(to right, #ff9068, #fd746c);
+  background: linear-gradient(to right, #ff9068, #fd746c);
 }
 
 .card {
@@ -46,12 +54,12 @@ div .mat-card-header-text {
   align-items: center;
 }
 .mat-card-footer {
-  margin:0;
+  margin: 0;
 }
 .company-logo {
   width: 60px;
   height: 60px;
-  margin-right:30px;
+  margin-right: 30px;
 }
 
 h3 {
@@ -64,8 +72,8 @@ h3 {
 }
 
 .certificate {
-  width:85%;
-  height:85%;
+  width: 85%;
+  height: 85%;
   border: 13px solid #3b4142;
   border-radius: 2px;
 }
@@ -75,7 +83,7 @@ h3 {
 }
 
 .mat-card:hover {
-  box-shadow: -3px -2px 4px 3px rgba(0,0,0,0.3);
+  box-shadow: -3px -2px 4px 3px rgba(0, 0, 0, 0.3);
   /* 0 -4px 6px 0 white, 0 -4px 6px 0 white ,0 -4px 6px 0 white */
   /* box-shadow: -15px 0 -15px -15px inset;  */
 }
@@ -89,13 +97,13 @@ h3 {
     column-gap: 25px;
     padding: 20px;
   }
-    .certificate {
-      width:85%;
-      height:85%;
-      border: 10px solid #2c3335;
-      border-radius:3px;
-    }
-    .certificate:hover {
-      border: 10px solid #2c3335;
-    }
+  .certificate {
+    width: 85%;
+    height: 85%;
+    border: 10px solid #2c3335;
+    border-radius: 3px;
+  }
+  .certificate:hover {
+    border: 10px solid #2c3335;
+  }
 }

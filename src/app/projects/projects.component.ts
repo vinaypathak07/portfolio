@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplyThemeService } from '../shared/apply-theme.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  firstBackground: string;
+  secondBackground: string;
+  thirdBackground: string;
+  constructor(private themeService: ApplyThemeService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  ngAfterViewInit() {
+    this.themeService.captureTheme.subscribe((received: any) => {
+      console.log(received);
+      this.firstBackground = received.color;
+      this.secondBackground = '-webkit-' + received.gradient;
+      this.thirdBackground = received.gradient;
+  });
+ }
 }

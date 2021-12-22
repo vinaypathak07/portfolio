@@ -1,5 +1,21 @@
 .mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 430px;
     border-radius: 0;
     box-shadow: 0 4px 10px 0px rgba(0,0,0,0.2), 0 -4px 10px 0 rgba(0,0,0,0.14), 0 3px 10px 0 rgba(0,0,0,0.12);
   }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image img {
+    width:390px;
+    height:340px;
+    /* object-fit: contain; */
+  }
+  

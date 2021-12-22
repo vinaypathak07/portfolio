@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 .card-container {
   /* position:relative; */
   min-height: calc(100vh - 144px);
@@ -8,6 +9,21 @@
   justify-content: center;
   align-items: center;
   padding: 40px;
+  /* background: #f857a6;  
+background: -webkit-linear-gradient(to right, #ff5858, #f857a6); 
+background: linear-gradient(to right, #ff5858, #f857a6); */
+/* background-image: linear-gradient( 128.1deg,  rgba(36,242,170,1) 12.4%, rgba(18,245,71,0.63) 62.4% ); 0*/
+
+/* background: #f857a6;  
+background: -webkit-linear-gradient(to right, #ff5858, #f857a6); 
+background: linear-gradient(to right, #ff5858, #f857a6);  */
+/* background: #0cebeb; 
+background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);  */
+background: #fd746c;  
+ background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
+ background: linear-gradient(to right, #ff9068, #fd746c);
+
 }
 .card {
   height: 100%;
@@ -18,6 +34,7 @@
   padding: 0px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 5px 4px rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
 .mat-card-header {
   display: flex;
@@ -70,7 +87,17 @@ img {
 }
 mat-card-footer div {
   height: 100%;
-  background-image: linear-gradient(to left, #00c6ff 0%, #00c6ff 51%, #0072ff 100%)
+  /* background-image: linear-gradient(to left, #00c6ff 0%, #00c6ff 51%, #0072ff 100%) */
+  /* background:  #2c3335; */
+  /* background: #7F00FF; 
+  background: -webkit-linear-gradient(to right, #E100FF, #7F00FF); 
+  background: linear-gradient(to right, #E100FF, #7F00FF);  */
+  background: #00c6ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+
 }
 mat-card-footer div:hover{
   background-position: right center;
@@ -82,6 +109,8 @@ mat-card-footer div:hover{
   align-items: center;
   font-size: 24px;
   font-weight: bold;
+  /* color: white; */
+  font-family: Inconsolata, Monospace;
 }
 @media only screen and (max-width: 600px) {
   .card-container {

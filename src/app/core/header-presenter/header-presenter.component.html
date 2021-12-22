@@ -81,11 +81,11 @@
         </div>
         <mat-menu xPosition="before" #colorPickerMenu="matMenu">
           <div *ngFor="let item of themes; let i = index">
-            <button mat-menu-item (click)="applyTheme(item.theme)">
+            <button mat-menu-item (click)="applyTheme(item.name)">
               <mat-icon [ngStyle]="{'color': '#2c3335'}" *ngIf="item.displayUnchecked; else displayChecked">
                 radio_button_unchecked
               </mat-icon>
-              <span class="menu-text">{{ item.theme }}</span>
+              <span class="menu-text">{{ item.name }}</span>
             </button>
           </div>
         </mat-menu>
