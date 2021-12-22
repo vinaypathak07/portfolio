@@ -149,6 +149,7 @@ export class HeaderPresenterComponent implements OnInit {
             item.displayUnchecked = false;
             this.appliedColor = item.color;
           }
+          // Done To Test these changes
       } else {
         item.displayUnchecked = true;
       }
